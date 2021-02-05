@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+
+    background-color: royalblue;
+}
+#menu{
+
+    list-style: none;
+}
+
+#menu li{
+
+    display: inline-block;
+    padding-top: 18px;
+    margin-top: 10px;
+}
+
+#menu li a{
+
+    padding: 15px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 22px;
+}
+
+#menu li a:hover{
+
+    color:black;
+    background-color: lime;
+}
+
+#body{
+    background-color: maroon;
+}
+
