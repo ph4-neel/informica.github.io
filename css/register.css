@@ -1,39 +1,30 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-
-.header{
-
-    background-color: royalblue;
+.header {
+    background-color: rgb(49, 47, 47);
 }
-#menu{
 
+#menu {
     list-style: none;
 }
 
-#menu li{
-
+#menu li {
     display: inline-block;
     padding-top: 18px;
     margin-top: 10px;
 }
 
-#menu li a{
-
+#menu li a {
     padding: 15px 15px;
     text-decoration: none;
     color: white;
     border-radius: 22px;
 }
 
-#menu li a:hover{
-
-    color:black;
+#menu li a:hover {
+    color: black;
     background-color: lime;
 }
-
-
-
-
