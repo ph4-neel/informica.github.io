@@ -7,14 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/register.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2"> -->
+    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
     <script src="js/jquery.js"></script>
-    <!-- <script src="js/bootstrap.js"></script> -->
+    <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 
 <body>
+    <style>
+        body {
+            overflow: hidden;
+        }
+        /* Preloader */
+        
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            /* change if the mask should have another color then white */
+            z-index: 99;
+            /* makes sure it stays on top */
+        }
+        
+        #status {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            /* centers the loading animation horizontally one the screen */
+            top: 50%;
+            /* centers the loading animation vertically one the screen */
+            background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+            /* path to your loading animation */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -100px 0 0 -100px;
+            /* is width and height divided by two */
+        }
+    </style>
+
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
 
     <div class="header">
         <div class="container">
@@ -47,11 +86,7 @@
                 </div>
             </div>
 
-            <!-- <div class="row py-3">
-        <div class="col-md-4 form-group m-auto">
-            <input type="text" maxlength="10" class="form-control" placeholder="Contact">
-        </div>
-    </div> -->
+
 
             <div class="row py-3">
                 <div class="col-md-4 form-group m-auto">
@@ -59,30 +94,7 @@
                 </div>
             </div>
 
-            <!-- <div class="row py-3">
-        <div class="col-md-4 form-group m-auto">
-            <select name="" id="" class="form-control" aria-placeholder="Occupation">
-                <option value=""> College Student</option>
-                <option value="">Teacher</option>
-                <option value="">School Student</option>
-                <option value="">Writer</option>
 
-            </select>
-        </div>
-    </div> -->
-
-            <!-- 
-    <div class="row py-3">
-        <div class="col-md-4 form-group m-auto">
-            <input type="password" class="form-control" placeholder="Password" id="p1">
-        </div>
-    </div>
-
-    <div class="row py-3">
-        <div class="col-md-4 form-group m-auto">
-            <input type="password" class="form-control" placeholder="Confirm Password" id="p2">
-        </div>
-    </div> -->
 
             <div class="row ">
                 <div class="col-md-4 form-group m-auto">
@@ -115,6 +127,31 @@
                     }, false)
                 })
         })()
+
+        window.onload = function() {
+            var elements = document.getElementsByClassName('typewrite');
+            for (var i = 0; i < elements.length; i++) {
+                var toRotate = elements[i].getAttribute('data-type');
+                var period = elements[i].getAttribute('data-period');
+                if (toRotate) {
+                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                }
+            }
+            // INJECT CSS
+            var css = document.createElement("style");
+            css.type = "text/css";
+            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+            document.body.appendChild(css);
+        };
+
+
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({
+                'overflow': 'visible'
+            });
+        })
     </script>
 
 
