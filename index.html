@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="style1.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2"> -->
+    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- <script src="js/bootstrap.js"></script> -->
+    <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Informica.com</title>
 </head>
@@ -179,7 +179,49 @@
             z-index: 1;
             transform: rotate(35deg);
         }
+        
+        body {
+            overflow: hidden;
+        }
+        /* Preloader */
+        
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #fff;
+            /* change if the mask should have another color then white */
+            z-index: 99;
+            /* makes sure it stays on top */
+        }
+        
+        #status {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            /* centers the loading animation horizontally one the screen */
+            top: 50%;
+            /* centers the loading animation vertically one the screen */
+            background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
+            /* path to your loading animation */
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: -100px 0 0 -100px;
+            /* is width and height divided by two */
+        }
     </style>
+
+
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+
+
+
+    <div class="loader"></div>
     <!-- navbar code -->
     <div class="header">
         <div class="container">
@@ -299,23 +341,7 @@
 
     <div class="footer">
 
-        <!-- <div class="row py-2">
-            <div class="col-md-4 m-auto">
-                <i class="fa fa-whatsapp" style="color:lime; font-size: 35px;"></i></div>
-            <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; font-size: 20px;"><a href="https://chat.whatsapp.com/Ku75xAOzegR8laScPkb1Lf" style="text-decoration: none; color: white;">Whatsapp</a></p>
-        </div>
-        <div class="row py-2">
-            <div class="col-md-4 m-auto">
-                <i class="fa fa-facebook" style="color:royalblue; font-size: 35px;"></i>
-                <p style="color: white; font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Facebook</p>
-            </div>
-        </div>
-        <div class="row py-2">
-            <div class="col-md-4 m-auto">
-                <img src="footer.jpg" alt="" style="height: 20%; width: 20%;">
-                <p style="color: white;">Our Developers Work On this Please Wait For this...</p>
-            </div>
-        </div> -->
+
 
 
 
@@ -470,6 +496,15 @@
             css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
             document.body.appendChild(css);
         };
+
+
+        $(window).on('load', function() { // makes sure the whole site is loaded 
+            $('#status').fadeOut(); // will first fade out the loading animation 
+            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+            $('body').delay(350).css({
+                'overflow': 'visible'
+            });
+        })
     </script>
 
 
