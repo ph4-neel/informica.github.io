@@ -1,516 +1,318 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Informica.com</title>
+	<title>StudyMade.Com</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
-<body>
+<body class="is-preload">
 
-    <style>
-        .header {
-            background-color: black;
-        }
-        
-        #menu {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #menu li {
-            display: inline-block;
-            margin-top: 12px;
-            margin-bottom: 10px;
-        }
-        
-        #menu li a {
-            color: white;
-            padding: 15px 15px;
-            display: block;
-            border-radius: 32px;
-            text-decoration: none;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-        
-        #menu li a:hover {
-            background-color: rgb(255, 255, 255);
-            color: black;
-            transition: 1s;
-        }
-        
-        #logo {
-            margin-top: 1rem;
-        }
-        
-        #banner {
-            background-size: cover;
-        }
-        
-        .banner-title h2 {
-            background-color: rgba(255, 255, 255, 0.8);
-            display: inline-block;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        
-        .banner-title p.lead {
-            color: #fff;
-            background-color: rgba(231, 76, 60);
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            border-radius: 5px;
-        }
-        
-        .service-box {
-            text-align: center;
-        }
-        
-        #icon {
-            color: royalblue;
-            font-size: 28px;
-        }
-        
-        #head {
-            font-family: 'Times New Roman', Times, serif;
-            margin-top: 12px;
-            margin-bottom: 12px;
-            color: teal;
-        }
-        
-        .testimonials p {
-            color: white;
-        }
-        
-        .footer {
-            background-color: #fff;
-            text-align: center;
-        }
-        /* #link{
-            text-decoration: none;
-            color: white;
-            font-family: Arial, Helvetica, sans-serif;
-        } */
-        
-        ul.timeline {
-            list-style-type: none;
-            position: relative;
-        }
-        
-        ul.timeline:before {
-            content: ' ';
-            background: #d4d9df;
-            display: inline-block;
-            position: absolute;
-            left: 29px;
-            width: 2px;
-            height: 100%;
-            z-index: 400;
-        }
-        
-        ul.timeline>li {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-        
-        ul.timeline>li:before {
-            content: ' ';
-            background: white;
-            display: inline-block;
-            position: absolute;
-            border-radius: 50%;
-            border: 3px solid #22c0e8;
-            left: 20px;
-            width: 20px;
-            height: 20px;
-            z-index: 400;
-        }
-        
-        .progress-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #333;
-            margin: 0 0 20px;
-        }
-        
-        .progress {
-            height: 20px;
-            background: #333;
-            border-radius: 0;
-            box-shadow: none;
-            margin-bottom: 30px;
-            overflow: visible;
-        }
-        
-        .progress .progress-bar {
-            position: relative;
-            -webkit-animation: animate-positive 2s;
-            animation: animate-positive 2s;
-        }
-        
-        .progress .progress-value {
-            display: block;
-            font-size: 18px;
-            font-weight: 500;
-            color: #000;
-            position: absolute;
-            top: -30px;
-            right: -25px;
-        }
-        
-        .progress .progress-bar:after {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            background: #fff;
-            position: absolute;
-            top: -10px;
-            bottom: -10px;
-            right: -5px;
-            z-index: 1;
-            transform: rotate(35deg);
-        }
-        
-        body {
-            overflow: hidden;
-        }
-        /* Preloader */
-        
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #fff;
-            /* change if the mask should have another color then white */
-            z-index: 99;
-            /* makes sure it stays on top */
-        }
-        
-        #status {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            left: 50%;
-            /* centers the loading animation horizontally one the screen */
-            top: 50%;
-            /* centers the loading animation vertically one the screen */
-            background-image: url(https://raw.githubusercontent.com/niklausgerber/PreLoadMe/master/img/status.gif);
-            /* path to your loading animation */
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: -100px 0 0 -100px;
-            /* is width and height divided by two */
-        }
-    </style>
+	<!-- Wrapper -->
+	<div id="wrapper">
 
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
 
-    <div id="preloader">
-        <div id="status">&nbsp;</div>
-    </div>
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>StudyMade.Com</strong></a>
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+						<li><a href="#" class="button">Apply For Online class</a></li>
+					</ul>
+				</header>
 
+				<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h1>Include attention-procure your proficiency on software engineering <br />
+							</h1>
+						</header>
+						<p>Here we are the .....(team name/website name ).....to assist our dear engineering students by providing codes , templates more over study materials ..am. Lorem ipsum dolor sit nullam.</p>
+						<ul class="actions">
+							<li><a href="#" class="button big">Learn More</a></li>
+						</ul>
+					</div>
+					<span class="image object">
+						<img src="images/pic10.jpg" alt="" />
+					</span>
+				</section>
 
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Our Motives</h2>
+					</header>
+					<div class="features">
+						<article>
+							<span class="icon fa-gem"></span>
+							<div class="content">
+								<h3>Portitor ullamcorper</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+									facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-paper-plane"></span>
+							<div class="content">
+								<h3>Sapien veroeros</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+									facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-rocket"></span>
+							<div class="content">
+								<h3>Quam lorem ipsum</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+									facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+						<article>
+							<span class="icon solid fa-signal"></span>
+							<div class="content">
+								<h3>Sed magna finibus</h3>
+								<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+									facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							</div>
+						</article>
+					</div>
+				</section>
 
-    <div class="loader"></div>
-    <!-- navbar code -->
-    <div class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4" id="logo">
+				<section>
+					<div>
+						<h3 style="text-align: center;">The latest News</h3><br>
+						<li style="text-align: center;"><a href="">Coding And Study Related Online classes are Starting If You are Interested You Can Apply</a></li>
+						<li style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ad modi laborum nam delectus ipsa?</li>
+					</div>
+				</section>
 
-                </div>
-                <div class="col-md-8">
-                    <ul id="menu" class="float-md-right">
-                        <li> <a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-                        <li><a href="contact.html"><i class="fa fa-phone"></i> Contact</a></li>
-                        <li><a href="category.html"> Categories</a></li>
-                        <li><a href="About.html">About Us</a></li>
-                        <li><a href="Register.html">Register</a></li>
-                        <li><a href="login.html">login</a></li>
-                        <li>
-                            <a href=""> <i class="fa fa-upload"></i> Upload Information</a>
-                        </li>
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Free Templates</h2>
+					</header>
+					<div class="posts">
+						<article>
+							<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+							<h3>Interdum aenean</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+							<h3>Nulla amet dolore</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+							<h3>Tempus ullamcorper</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+							<h3>Sed etiam facilis</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download
+								</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
+							<h3>Feugiat lorem aenean</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download</a></li>
+							</ul>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
+							<h3>Amet varius aliquam</h3>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">Download</a></li>
+							</ul>
+						</article>
+					</div>
+				</section>
 
-                    </ul>
-                </div>
-            </div>
-        </div>
+				<div style=>
+					<a href="#">
+						<p>&copy; All rights reserved ANNTech Privet Ltd.</p>
+					</a>
+				</div>
 
-    </div>
-    <!-- navbar code -->
+				
+					
+			</div>
+		</div>
 
-    <div id="banner" class="py-5" style="background: url('pic3.jpg'); ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="banner-title">
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
 
-                        <h2>Welcome To Our Website</h2>
-                        <p style="padding-left: 10px; padding-right: 10px; color: black; background-color: white; border-radius: 15px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Informica Is a Website Where You Get Different Types Of Study Materials For Your College,School,Board Exams,Entrance Exams.We Also Provide Materials For Different Subject Also Like math,Physics,Chemistry,Bengali,etc.</p>
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
 
-                    </div>
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Study Materials</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">Homepage</a></li>
 
-                </div>
-            </div>
-        </div>
-    </div>
-    </br>
-    <div class="container" style="text-align: center; background-color: brown; border-radius: 28px;">
-        <div class="row py-3">
-            <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">
-                <a href="" class="typewrite" style="text-decoration: none; color: #fff;" data-period="2000" data-type='["Thank You For Visiting Our Website😁", "Tap To Categories...✔️","Lets Start Your Journey With Informica","Or Tap To Upload Information And Be A Part Of Us 👍"]'>
-                    <span class="wrap"></span>
-                </a>
-            </h1>
+						<li>
+							<span class="opener">1st Year</span>
+							<ul>
+								<li><a href="images/syallabus.pdf" download>Syllabus</a></li>
+								<li><a href="#">1st Semester</a></li>
+								<li><a href="#">2nd Semester</a></li>
+								
+							</ul>
+						</li>
+						<li>
+							<span class="opener">Computer Science</span>
+							<ul>
+								<li><a href="#">Discrete Mathemetics</a></li>
+								<li><a href="#">Digital Logic Design</a></li>
+								<li><a href="#">Data Structure</a></li>
+								<li><a href="#">C Programing</a></li>
+							</ul>
+						</li>
+						
 
+						<li>
+							<span class="opener">Question Papers</span>
+							<ul>
+								<li><a href="#">INTERNAL</a></li>
+								<li><a href="#">EXTERNAL</a></li>
+							</ul>
+						</li>
 
-        </div>
+						<li>
+							<span class="opener">Assignments</span>
+							<ul>
+								<li><a href="">Data Structure</a></li>
+								<li><a href="#">Digital Logic Design</a></li>
+								<li><a href="#">C Programing</a></li>
+								<li><a href="#">Electronic Devices</a></li>
+								<li><a href="#">PC Maintenance</a></li>
 
-    </div>
-    <br>
+							</ul>
+						</li>
+						<li><a href="index.html">Books Review</a></li>
+						<li><a href="">Education Related Articles</a></li>
+						
+					</ul>
+					<header class="major">
+						<h2>Codes</h2>
+					</header>
 
-    <div class="container section">
-        <div class="row py-3">
-            <div class="col-md-12">
-                <h2 class="section-head text-center" id="head"></h2>
-            </div>
+					<ul>
+						<li>
+							<span class="opener">React Js</span>
+							<ul>
+								<li><a href="">DataCall code</a></li>
+								<li><a href="#">Static Function For Multiple DataCalls</a></li>
+								<li><a href="#">DataCall with Id</a></li>
+								<li><a href="#">Form Validation</a></li>
+								<li><a href="#">Password ENCRYPTION/*</a></li>
+							</ul>
+						</li>
 
-            <div class="col-md-4">
-                <div class="service-box shadow">
-                    <i class="fa fa-anchor" id="icon"></i>
-                    <h2 style="color: tomato;">Future Plan</h2>
-                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Make a Large Website With Great Knowledge For Helping Students in Their Ttudies.</p>
+						<li>
+							<span class="opener">C Programming</span>
+							<ul>
+								<li><a href="">Quiz Game Code</a></li>
+								<li><a href="#">Calculator code</a></li>
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+						</li>
 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="service-box shadow">
-                    <i class="fa fa-users" style="font-size: 28px;color: royalblue;"></i>
-                    <h2 style="color: tomato;">Motive</h2>
-                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Just Try To Make a Helping Hand For Our Fututre For Next Generation.</p>
+						<li>
+							<span class="opener">PHP</span>
+							<ul>
+								<li><a href="">CRUD OPERATION CODE</a></li>
+								<li><a href="#">PASSWORD ENCRYPTION IN PHP</a></li>
+								<li><a href="#">PHOTO POST IN SERVER CODE</a></li>
+								<li><a href="#"></a></li>
+							</ul>
+						</li>
 
-                </div>
-            </div>
+						<li><a href="#">Terms & Policy</a></li>
+						<li><a href="About.html">About Us</a></li>
 
-            <div class="col-md-4">
-                <div class="service-box shadow">
-                    <i class="fa fa-bar-chart" style="font-size: 28px;color: royalblue;"></i>
-                    <h2 style="color: tomato;">Content</h2>
-                    <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Provide Information For Different Subject For Students. </p>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" id="inspiration" style="background: url('photo2.jpg');">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="section-head" style="margin-top:10px; color: white; text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">INSPIRATION</h2>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonials" style="text-align: center;">
-                    <p>Play A Great Role In Improvisation Of Society Education In INDIA.</p>
-                    <img src="doctor.jpg" alt="" style="height: 26%; width: 19%; margin-left: 10[x];">
-                    <div class="author" style="color: white; margin-top: 15px;">Dr.Sarvepolli RadhaKrishnan</div>
-                    <div class="author-company" style="color: white;"></div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="testimonials" style="text-align: center;">
-                    <p>Give us a Great Reveloution in The path Of Technology.</p>
-                    <img src="bill.jpg" alt="" style="height: 20%; width: 20%;">
-                    <div class="author" style="margin-top: 10px; color: white;">Bill Gates</div>
-                    <div class="author-company" style="margin-bottom: 10px; color: white;">Microsoft</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+					</ul>
+				</nav>
 
 
-    <div class="footer">
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+						ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+						tempus aliquam.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+						<li class="icon solid fa-phone">(000) 000-0000</li>
+						<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
+							Nashville, TN 00000-0000</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a
+							href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5
+							UP</a>.</p>
+				</footer>
 
 
+				
+			</div>
+		</div>
 
+	</div>
 
-
-        <div class="row py-5">
-            <div class="col-md-6 offset-md-3 shadow">
-                <h4>Latest News</h4>
-                <ul class="timeline">
-                    <li>
-                        <a target="_blank" href="">New Web Design</a>
-                        <a href="#" class="float-right">21 March, 2014</a>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque scelerisque diam non nisi semper, et elementum lorem ornare. Maecenas placerat facilisis mollis. Duis sagittis ligula in sodales vehicula....</p>
-                    </li>
-                    <li>
-                        <a href="#">21 000 Job Seekers</a>
-                        <a href="#" class="float-right">4 March, 2014</a>
-                        <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis. Nam pellentesque felis vitae justo accumsan, sed semper nisi sollicitudin...</p>
-                    </li>
-                    <li>
-                        <a href="#">Awesome Employers</a>
-                        <a href="#" class="float-right">1 April, 2014</a>
-                        <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla odio, tincidunt vitae nunc vitae, mollis pharetra velit. Sed nec tempor nibh...</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-
-    </div>
-
-    <div class="container" style="margin-top: 19px;">
-        <div class="row" style="text-align: center;">
-            <div class="col">
-                <h3 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:#f2622a;">Progress Reports</h3>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="progress-title">Webpage Creation(60%)</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width:60%; background:#97c513;">
-                        <div class="progress-value">60%</div>
-                    </div>
-                </div>
-
-                <h3 class="progress-title">Audience(0%)</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width:2%; background:#f2545b;">
-                        <div class="progress-value">2%</div>
-                    </div>
-                </div>
-
-                <h3 class="progress-title">Content(10%)</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width:10%; background:#4286f4;">
-                        <div class="progress-value">10%</div>
-                    </div>
-                </div>
-
-                <h3 class="progress-title">Promotion(1%)</h3>
-                <div class="progress">
-                    <div class="progress-bar" style="width:1%; background:#21ff63;">
-                        <div class="progress-value">1%</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
-    <div class="later-footer">
-        <div class="row" style="text-align: center; background-color:floralwhite">
-            <div class="col-md-4" style="margin-top: 5px;">
-                <i class="fa fa-whatsapp" style="color:lime; font-size: 35px;"></i>
-                <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; color: white; font-size: 20px;"><a href="https://chat.whatsapp.com/Ku75xAOzegR8laScPkb1Lf" style="text-decoration: none; color:black;">Whatsapp</a></p>
-            </div>
-            <div class="col-md-4" style="margin-top: 5px;">
-                <i class="fa fa-facebook" style="color:royalblue; font-size: 35px;"></i>
-                <a href="" style="text-decoration: none;">
-                    <p style="color:black; font-size: 20px; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Facebook</p>
-                </a>
-            </div>
-
-            <div class="col-md-4 m-auto">
-                hello<i class="fas fa-at"></i>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-    <script>
-        var TxtType = function(el, toRotate, period) {
-            this.toRotate = toRotate;
-            this.el = el;
-            this.loopNum = 0;
-            this.period = parseInt(period, 10) || 2000;
-            this.txt = '';
-            this.tick();
-            this.isDeleting = false;
-        };
-
-        TxtType.prototype.tick = function() {
-            var i = this.loopNum % this.toRotate.length;
-            var fullTxt = this.toRotate[i];
-
-            if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-            } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-            }
-
-            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-            var that = this;
-            var delta = 200 - Math.random() * 100;
-
-            if (this.isDeleting) {
-                delta /= 2;
-            }
-
-            if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-            } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-            }
-
-            setTimeout(function() {
-                that.tick();
-            }, delta);
-        };
-
-        window.onload = function() {
-            var elements = document.getElementsByClassName('typewrite');
-            for (var i = 0; i < elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-type');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                    new TxtType(elements[i], JSON.parse(toRotate), period);
-                }
-            }
-            // INJECT CSS
-            var css = document.createElement("style");
-            css.type = "text/css";
-            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-            document.body.appendChild(css);
-        };
-
-
-        $(window).on('load', function() { // makes sure the whole site is loaded 
-            $('#status').fadeOut(); // will first fade out the loading animation 
-            $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-            $('body').delay(350).css({
-                'overflow': 'visible'
-            });
-        })
-    </script>
-
-
-
-
-
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
 
 </body>
 
