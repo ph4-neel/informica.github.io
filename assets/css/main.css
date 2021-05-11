@@ -135,7 +135,7 @@ input, select, textarea {
 	}
 
 	blockquote {
-		border-left: solid 0.5em black;
+		border-left: solid 0.5em #ddd;
 		padding: 1em 0 1em 2em;
 		font-style: italic;
 	}
@@ -146,7 +146,7 @@ input, select, textarea {
 
 	hr {
 		border: 0;
-		border-top: solid 1px rgb(128, 39, 39);
+		border-top: solid 1px #ddd;
 		margin: 2em 0 2em 0;
 	}
 
