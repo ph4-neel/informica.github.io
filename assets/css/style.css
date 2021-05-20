@@ -367,15 +367,15 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color:black;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid #ef6603;
+  border: 2px solid aqua;
 }
 
 #hero .btn-get-started:hover {
-  background: #ef6603;
-  color: #fff;
+  background: white;
+  color:black;
   text-decoration: none;
 }
 
@@ -1828,3 +1828,6 @@ section {
 .deneb_cta .cta_wrapper .button_box .deneb_btn:focus {
     box-shadow: 2.5px 4.33px 15px 0px rgba(0, 0, 0, 0.15);
 }
+
+/* slide */
+
