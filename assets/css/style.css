@@ -1565,7 +1565,21 @@ section {
   font-size: 13px;
 }
 
-
+.block-7 {
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding: 0;
+  overflow: hidden;
+  background: #fff;
+  -webkit-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 24px 48px -13px rgba(0, 0, 0, 0.05);
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 @media (max-width: 991.98px) {
     .block-7 {
         margin-top: 30px;
