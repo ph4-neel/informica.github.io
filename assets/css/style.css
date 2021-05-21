@@ -367,7 +367,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color:black;
+  color:whitesmoke;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
   border: 2px solid aqua;
