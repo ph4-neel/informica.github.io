@@ -38,7 +38,7 @@
                     <li class="nav__item"><a href="#portfolio" class="nav__link">works</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Members</a></li>
-                    <li class="nav__item"><a href="Admin/login.html" class="nav__link" id="admin" onclick="admins()">Admin</a></li>
+                    <li class="nav__item"><a href="Admin/login.html" class="nav__link" id="admin">Admin</a></li>
                 </ul>
             </div>
 
@@ -48,7 +48,7 @@
         </nav>
     </header>
 
-    
+
 
     <!-- Slideshow container -->
 
@@ -262,7 +262,7 @@
             </div>
         </section>
 
-       
+
     </main>
 
     <!--===== FOOTER =====-->
@@ -297,7 +297,7 @@
         </div>
     </footer>
 
-  
+
 
 
 
@@ -316,12 +316,23 @@
 
 
     <script>
-        admins=()=>{
-            alert("This Page is Only for Admin not  for any user")
-        }
+        document.getElementById("admin").addEventListener("click", function (event) {
+            event.preventDefault()
+            let person = prompt("Please enter your code name to access this page");
+            let text;
+            if (person=="sudipp bakshi") {
+                window.location.href = "Admin/login.html";
+                
+            }
+            else{
+                alert("sorry you are not appropriate person for this page ")
+                window.location.href = "index.html";
+
+            }
+        });
     </script>
 
-   
+
 
 
 
