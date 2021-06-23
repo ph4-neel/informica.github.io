@@ -229,7 +229,7 @@
                 </div>
             </div>
         </section>
- 
+
 
         <section>
             <h2 class="section-title">Gallery</h2>
@@ -362,22 +362,54 @@
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
     <script>
         document.getElementById("admin").addEventListener("click", function (event) {
             event.preventDefault()
 
-            let person = prompt("Please enter your code name to access this page");
-            let text;
-            if (person == "sudipp bakshi") {
-                window.location.href = "Admin/login.html";
+            // let person = prompt("Please enter your code name to access this page");
+            // let text;
+            // if (person == "sudipp bakshi") {
+            //     window.location.href = "Admin/login.html";
 
-            }
-            else {
-                alert("sorry you are not appropriate person for this page ")
-                window.location.href = "index.html";
+            // }
+            // else {
+            //     alert("sorry you are not appropriate person for this page ")
+            //     window.location.href = "index.html";
 
-            }
+            // }
+
+            swal("Enter your code name to access the page", {
+                content: "input",
+            })
+                .then((value) => {
+                    if (value == "neel") {
+
+                        window.location.href = "Admin/login.html";
+
+
+                    }
+
+                    else {
+                        swal({
+                            title: "Sorry!",
+                            text: "You are not Appropriate Person to access the page!",
+                            icon: "error",
+                            button: "Ok",
+                        });
+                    }
+
+
+
+
+                });
+
+
+
+
+
         });
     </script>
 
